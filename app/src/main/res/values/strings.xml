@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Proyectobase_DiegoOrellana</string>
+    <string name="copyright_biofit_chile_2022_todos_los_derechos_reservados">Copyright Biofit Chile 2022 Todos los derechos reservados</string>
+    <string name="salir_de_biofit">Salir de biofit</string>
+    <string name="iniciar_sesi_n">Iniciar Sesión</string>
+    <string name="ingresar_texto_de_descripcion">Ingresar texto de descripcion :)</string>
+    <string name="textview">TextView</string>
+    <string name="bienvenido_a_biofit">Bienvenido a Biofit</string>
+    <string name="calcular">Calcular</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="cont_ctenos">Contáctenos</string>
+    <string name="si_desea_ponerse_en_contacto_con_nosotros_puede_llamarnos_o_ubicarnos_en_el_mapa">Si desea ponerse en contacto con nosotros, puede llamarnos o ubicarnos en el mapa.</string>
+    <string name="bienvenido_a_biofit_la_herramienta_m_vil_definitiva_del_fitness_que_le_ayudar_a_gestionar_distintos_tipos_de_insumos_y_elementos_necesarios_para_el_desarrollo_y_la_biolog_a_del_ser_humano">BIenvenido a Biofit, la herramienta móvil definitiva del fitness, que le ayudará a gestionar distintos tipos de insumos y elementos necesarios para el desarrollo y la biología del ser humano.</string>
+</resources>
