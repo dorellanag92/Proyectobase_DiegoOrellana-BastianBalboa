@@ -26,27 +26,19 @@ public class Home_act extends AppCompatActivity {
         String ruta = "android.resource://"+getPackageName() + "/" + R.raw.video;
         Uri uri = Uri.parse(ruta); //parseo la ruta
         video.setVideoURI(uri);//al videoview le paso mi video
+        video.start();
 
         //Controles para el video
-        MediaController media = new MediaController(this);
-        video.setMediaController(media);
+        //MediaController media = new MediaController(this);
+        //video.setMediaController(media);
 
 
     }
 
+    public void Clases(View view){
+        Intent i = new Intent(this, Clases_act.class);
+        startActivity(i);
 
-
-
-    public void Task(View v){
-        try{
-            for(int i = 0; i<10;i++){
-                Thread.sleep(2000);
-                Toast.makeText(this, "Tarea larga finalizada", Toast.LENGTH_SHORT).show();
-            }
-        }
-        catch (InterruptedException e){
-            e.printStackTrace();
-        }
     }
 
     public void Insumos(View v){
