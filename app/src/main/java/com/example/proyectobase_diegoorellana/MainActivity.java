@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new Task().execute();
-
             }
         });
     }
@@ -64,21 +63,18 @@ public class MainActivity extends AppCompatActivity {
             try {
                 for(int i = 0; i <= 2;i++){
                     Thread.sleep(2000);
-
                 }
             }
             catch (InterruptedException e){
                 e.printStackTrace();
 
             }
-
             return null;
         }
 
         //Finaliza la tarea
         @Override
         protected void onPostExecute(String s) {
-
 
             super.onPostExecute(s);
             pb.setVisibility(View.VISIBLE);
@@ -128,10 +124,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     break;
             }
-
-
-            }
         }
+    }
 
     public void Info(View view){
         Intent i = new Intent(this, Info_act.class);
@@ -142,13 +136,6 @@ public class MainActivity extends AppCompatActivity {
         finish();
         System.exit(0);
     }
-
-
-
-
-
-
-
 
     public void Facebook(View view){
         Intent i = new Intent(Intent.ACTION_VIEW); //abre sitio web
@@ -167,5 +154,4 @@ public class MainActivity extends AppCompatActivity {
         i.setData(Uri.parse("https://www.twitter.com/"));
         startActivity(i);
     }
-
 }

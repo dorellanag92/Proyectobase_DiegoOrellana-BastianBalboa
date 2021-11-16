@@ -34,8 +34,6 @@ public class Insumos_act extends AppCompatActivity {
         //relleno el spinner
         ArrayAdapter adaptInsumos = new ArrayAdapter(this, android.R.layout.simple_list_item_1,listado);
         insumos.setAdapter(adaptInsumos);
-
-
     }
 
     public void Calcular(View view){
@@ -47,9 +45,7 @@ public class Insumos_act extends AppCompatActivity {
                 calificar.setRating(i+1);
                 break;
             }
-
         }
         result.setText("El precio de "+ opcion+" más el adicional, es: $"+resultado);
-
     }
 }

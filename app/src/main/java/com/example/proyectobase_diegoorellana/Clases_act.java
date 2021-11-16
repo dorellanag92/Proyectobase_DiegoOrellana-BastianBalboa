@@ -26,30 +26,25 @@ public class Clases_act extends AppCompatActivity {
     }
 
     //Metodo para añadir clases
-
     public void guardarClase(View view){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"biofit",null,1);
         SQLiteDatabase db = admin.getWritableDatabase();
         String cdg = codigo.getText().toString();
         String cls = clase.getText().toString();
         String its = intens.getText().toString();
-        
         if (!cdg.isEmpty() && !cls.isEmpty() && !its.isEmpty()){
             ContentValues cont = new ContentValues();
             cont.put("codigo",cdg);
             cont.put("clases",cls);
             cont.put("intensidad",its);
-            
             db.insert("Clases",null,cont);
             db.close();
             Clear();
             Toast.makeText(this, "Has guardado una clase", Toast.LENGTH_SHORT).show();
-            
         }
         else{
             Toast.makeText(this, "Los campos están vacíos", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     public void mostrarClase(View view){
@@ -103,17 +98,14 @@ public class Clases_act extends AppCompatActivity {
             ContentValues cont = new ContentValues();
             cont.put("clases",cls);
             cont.put("intensidad",its);
-
             db.update("Clases",cont,"codigo=:"+cdg,null);
             db.close();
             Clear();
             Toast.makeText(this, "Has actualizado la clase", Toast.LENGTH_SHORT).show();
-
         }
         else{
             Toast.makeText(getBaseContext(), "Hay campos vacíos", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     public void Clear(){

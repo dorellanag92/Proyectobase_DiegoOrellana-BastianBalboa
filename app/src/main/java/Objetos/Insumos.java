@@ -6,12 +6,11 @@ import java.util.Objects;
 public class Insumos {
 
     private int id;
-    private String[] insumos = {"Mancuernas","Barras","Banca Press","Punching Bag",};
-    private int[] precios = {25000,12000,120000,35000,30000,250000};
+    private String[] insumos = {"Mancuernas","Barras","Banca Press","Punching Bag","Cuerda","Trotadora"};
+    private int[] precios = {50000,15000,100000,35000,8000,250000};
     private int stock;
 
     public Insumos(){
-
     }
 
     public Insumos(int id, String[] insumos, int[] precios, int stock) {
@@ -80,8 +79,6 @@ public class Insumos {
     }
 
     //Reglas de negocio
-
-    //Para adicional
     public int anadirAdicional(int valor, int adicional){
         return valor + adicional;
     }

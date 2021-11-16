@@ -27,18 +27,11 @@ public class Home_act extends AppCompatActivity {
         Uri uri = Uri.parse(ruta); //parseo la ruta
         video.setVideoURI(uri);//al videoview le paso mi video
         video.start();
-
-        //Controles para el video
-        //MediaController media = new MediaController(this);
-        //video.setMediaController(media);
-
-
     }
 
     public void Clases(View view){
         Intent i = new Intent(this, Clases_act.class);
         startActivity(i);
-
     }
 
     public void Insumos(View view){
