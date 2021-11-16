@@ -41,11 +41,15 @@ public class Home_act extends AppCompatActivity {
 
     }
 
-    public void Insumos(View v){
+    public void Insumos(View view){
         Intent i =  new Intent(this, Insumos_act.class);
         Bundle bun = new Bundle(); //necesario para enviar los arreglos
         bun.putStringArray("Insumos",in.getInsumos());
         i.putExtras(bun); //envio el bundle desde el intent
         startActivity(i);
+    }
+    
+    public void porImplementar(View view){
+        Toast.makeText(this, "No implementado.", Toast.LENGTH_SHORT).show();
     }
 }

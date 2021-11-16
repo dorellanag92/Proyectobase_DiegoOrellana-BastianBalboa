@@ -101,7 +101,6 @@ public class Clases_act extends AppCompatActivity {
 
         if (!cdg.isEmpty() && !cls.isEmpty() && !its.isEmpty()){
             ContentValues cont = new ContentValues();
-            cont.put("codigo",cdg);
             cont.put("clases",cls);
             cont.put("intensidad",its);
 
