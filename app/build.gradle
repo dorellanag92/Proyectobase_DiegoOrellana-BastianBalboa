@@ -6,7 +6,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.basgo.proyectobase_diegoorellana-bastianbalboa"
+        applicationId "com.basgo.biofit_diegoorellanabastianbalboa"
         minSdk 21
         targetSdk 31
         versionCode 1

@@ -40,10 +40,10 @@
 
             <TextView
                 android:id="@+id/textView7"
-                android:layout_width="176dp"
-                android:layout_height="23dp"
+                android:layout_width="178dp"
+                android:layout_height="22dp"
                 android:layout_marginTop="24dp"
-                android:text="@string/cont_ctenos"
+                android:text="Contáctenos o ubíquenos"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +62,7 @@
             <LinearLayout
                 android:layout_width="160dp"
                 android:layout_height="57dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
