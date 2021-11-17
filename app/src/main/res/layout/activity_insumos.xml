@@ -38,7 +38,7 @@
                 android:layout_width="305dp"
                 android:layout_height="27dp"
                 android:layout_marginTop="24dp"
-                android:text="@string/bienvenido_a_biofit"
+                android:text="Bienvenido a Biofit App"
                 android:textColor="#009688"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -51,7 +51,7 @@
                 android:layout_width="309dp"
                 android:layout_height="94dp"
                 android:layout_marginTop="24dp"
-                android:text="@string/bienvenido_a_biofit_la_herramienta_m_vil_definitiva_del_fitness_que_le_ayudar_a_gestionar_distintos_tipos_de_insumos_y_elementos_necesarios_para_el_desarrollo_y_la_biolog_a_del_ser_humano"
+                android:text="Esta es la seccion de insumos, donde podrás gestionar todos los insumos disponibles en esta aplicacion, y obtener resultados a traves de sus precios con un adicional por envío."
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />

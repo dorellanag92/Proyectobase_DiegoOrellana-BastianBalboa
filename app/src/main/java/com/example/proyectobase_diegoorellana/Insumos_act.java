@@ -40,12 +40,12 @@ public class Insumos_act extends AppCompatActivity {
         String opcion = insumos.getSelectedItem().toString(); //Se obtiene la seleccion
         int resultado = 0;
         for(int i = 0; i < opcion.length(); i++){
-            if(opcion.equals(in.getInsumos()[i])){
-                resultado = in.anadirAdicional(in.getPrecios()[i],350);
-                calificar.setRating(i+1);
-                break;
-            }
+                if(opcion.equals(in.getInsumos()[i])){
+                    resultado = in.anadirAdicional(in.getPrecios()[i],8000);
+                    calificar.setRating(in.getRatings()[i]);
+                    break;
+                }
         }
-        result.setText("El precio de "+ opcion+" más el adicional, es: $"+resultado);
+        result.setText("El precio de "+ opcion+" más el envío, es: $"+resultado);
     }
 }

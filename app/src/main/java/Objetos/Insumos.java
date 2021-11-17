@@ -6,17 +6,19 @@ import java.util.Objects;
 public class Insumos {
 
     private int id;
-    private String[] insumos = {"Mancuernas","Barras","Banca Press","Punching Bag","Cuerda","Trotadora"};
-    private int[] precios = {50000,15000,100000,35000,8000,250000};
+    private String[] insumos = {"Mancuernas Ajustables","Barras","Banca Press","Punching Bag","Cuerda","Trotadora","Balón de Pilates","Elíptica", "Alfombra de yoga"};
+    private int[] precios = {50000,15000,100000,35000,8000,250000,10000,210000,5000};
+    private int[] ratings = {5,4,2,5,4,5,5,2,3};
     private int stock;
 
     public Insumos(){
     }
 
-    public Insumos(int id, String[] insumos, int[] precios, int stock) {
+    public Insumos(int id, String[] insumos, int[] precios,int[] ratings,  int stock) {
         this.id = id;
         this.insumos = insumos;
         this.precios = precios;
+        this.ratings = ratings;
         this.stock = stock;
     }
 
@@ -52,20 +54,25 @@ public class Insumos {
         this.stock = stock;
     }
 
+    public int[] getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(int[] ratings) {
+        this.ratings = ratings;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Insumos insumos1 = (Insumos) o;
-        return id == insumos1.id && stock == insumos1.stock && Arrays.equals(insumos, insumos1.insumos) && Arrays.equals(precios, insumos1.precios);
+        return id == insumos1.id && stock == insumos1.stock && Arrays.equals(insumos, insumos1.insumos) && Arrays.equals(precios, insumos1.precios) && Arrays.equals(ratings, insumos1.ratings);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(id, stock);
-        result = 31 * result + Arrays.hashCode(insumos);
-        result = 31 * result + Arrays.hashCode(precios);
-        return result;
+        return super.hashCode();
     }
 
     @Override
@@ -74,6 +81,7 @@ public class Insumos {
                 "id=" + id +
                 ", insumos=" + Arrays.toString(insumos) +
                 ", precios=" + Arrays.toString(precios) +
+                ", ratings=" + Arrays.toString(ratings) +
                 ", stock=" + stock +
                 '}';
     }
