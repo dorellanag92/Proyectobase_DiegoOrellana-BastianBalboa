@@ -98,7 +98,7 @@ public class Clases_act extends AppCompatActivity {
             ContentValues cont = new ContentValues();
             cont.put("clases",cls);
             cont.put("intensidad",its);
-            db.update("Clases",cont,"codigo=:"+cdg,null);
+            db.update("Clases",cont,"codigo="+cdg,null);
             db.close();
             Clear();
             Toast.makeText(this, "Has actualizado la clase", Toast.LENGTH_SHORT).show();

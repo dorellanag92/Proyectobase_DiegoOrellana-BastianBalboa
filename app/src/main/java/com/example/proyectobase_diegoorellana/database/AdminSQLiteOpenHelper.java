@@ -17,6 +17,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         //se crea la tabla
         db.execSQL("CREATE TABLE Clases (codigo int primary key, clases text, intensidad text)");
+        db.execSQL("CREATE TABLE Usuarios (id int primary key, usuario text, contrasena text)");
     }
 
     @Override

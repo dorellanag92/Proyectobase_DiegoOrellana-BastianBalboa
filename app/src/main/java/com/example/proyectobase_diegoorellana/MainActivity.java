@@ -3,6 +3,8 @@ package com.example.proyectobase_diegoorellana;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -11,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.proyectobase_diegoorellana.database.AdminSQLiteOpenHelper;
 
 import Objetos.Administrador;
 import Objetos.Insumos;
@@ -29,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        user = findViewById(R.id.etuser);
-        pass = findViewById(R.id.etpass);
+        user = findViewById(R.id.reguser);
+        pass = findViewById(R.id.regpass);
         msj = findViewById(R.id.msj);
         btn = findViewById(R.id.btn);
         pb = findViewById(R.id.pb);
@@ -47,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Tarea asincrona
-    class Task extends AsyncTask<String, Void, String>{
+    class Task extends AsyncTask<String, Void, String> {
 
         //Define la configuracion inicial de mi tarea
         @Override
@@ -61,11 +66,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... strings) {
             try {
-                for(int i = 0; i <= 2;i++){
-                    Thread.sleep(2000);
+                for (int i = 0; i <= 2; i++) {
+                    Thread.sleep(500);
                 }
-            }
-            catch (InterruptedException e){
+            } catch (InterruptedException e) {
                 e.printStackTrace();
 
             }
@@ -75,12 +79,37 @@ public class MainActivity extends AppCompatActivity {
         //Finaliza la tarea
         @Override
         protected void onPostExecute(String s) {
-
             super.onPostExecute(s);
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getBaseContext(), "biofit", null, 1);
+            SQLiteDatabase db = admin.getWritableDatabase();
             pb.setVisibility(View.VISIBLE);
-            String usuario = user.getText().toString().trim();
-            String contrasena = pass.getText().toString().trim();
-            String userObj = adm.getUser().trim();
+
+            String usr = user.getText().toString();
+            String pas = pass.getText().toString();
+
+            if (!usr.isEmpty() && !pas.isEmpty()) {
+                Cursor fila = db.rawQuery("SELECT usuario, contrasena FROM Usuarios where usuario= '" + usr + "' and contrasena= '" + pas + "'", null);
+                if (fila.moveToFirst()) {
+                    Intent i = new Intent(getBaseContext(), Home_act.class);
+                    //preparo los extras
+                    Bundle bun = new Bundle(); //necesario para enviar los arreglos
+                    bun.putStringArray("Insumos",in.getInsumos());
+                    i.putExtras(bun); //envio el bundle desde el intent
+                    startActivity(i);
+                } else {
+                    Toast.makeText(getBaseContext(), "Usuario inexistente", Toast.LENGTH_SHORT).show();
+                }
+                db.close();
+                pb.setVisibility(View.INVISIBLE);
+            }
+            else {
+                Toast.makeText(getBaseContext(), "No debes dejar campos vacíos", Toast.LENGTH_SHORT).show();
+                pb.setVisibility(View.INVISIBLE);
+            }
+        }
+
+
+          /*String userObj = adm.getUser().trim();
             String passObj = adm.getPass().trim();
 
             switch(usuario){
@@ -123,12 +152,17 @@ public class MainActivity extends AppCompatActivity {
                         msj.setText("Campos incorrectos. Intente nuevamente.");
                     }
                     break;
-            }
-        }
+            }*/
     }
+
 
     public void Info(View view){
         Intent i = new Intent(this, Info_act.class);
+        startActivity(i);
+    }
+
+    public void Registrar(View view){
+        Intent i = new Intent(this, Registro_act.class);
         startActivity(i);
     }
 
