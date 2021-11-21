@@ -86,27 +86,6 @@ public class Registro_act extends AppCompatActivity {
             Toast.makeText(getBaseContext(), "No deben haber campos vacíos", Toast.LENGTH_SHORT).show();
         }
     }
-
-    public void mostrarClase(View view){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"biofit",null,1);
-        SQLiteDatabase db = admin.getWritableDatabase();
-
-        String idreg = idu.getText().toString();
-        if(!idreg.isEmpty()){
-            Cursor file = db.rawQuery("SELECT usuario, contrasena FROM Usuarios WHERE id="+idreg,null);
-            if(file.moveToFirst()){
-                usr.setText(file.getString(0));
-                pass.setText(file.getString(1));
-            }
-            else{
-                Toast.makeText(this, "No hay elementos", Toast.LENGTH_SHORT).show();
-            }
-        }
-        else{
-            Toast.makeText(this, "No hay clase asociada", Toast.LENGTH_SHORT).show();
-        }
-    }
-
     public void Limpiar(){
         idu.setText("");
         usr.setText("");
